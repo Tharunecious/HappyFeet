@@ -1,0 +1,14 @@
+{
+  "name": "happy-feet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix frontend/ecom\" \"npm run start --prefix backend/ecom\"",
+    "dev": "npm run start"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}
