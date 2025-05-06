@@ -154,7 +154,7 @@ const placeOrderStripe = async (req, res) => {
             cancel_url: `${origin}/verify?success=false&orderId=${newOrder._id}`,
             line_items,
             mode: 'payment',
-        })``
+        })
 
         res.json({ success: true, session_url: session.url })
 
