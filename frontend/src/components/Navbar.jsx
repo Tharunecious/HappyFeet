@@ -8,6 +8,7 @@ const Navbar = () => {
 
   const [visible, setVisible] = useState(false);
   const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext)
+  const adminUrl = import.meta.env.VITE_ADMIN_URL
 
   const logout = () => {
     navigate('/login')
@@ -52,23 +53,25 @@ const Navbar = () => {
 
         <div className='group relative'>
           <Icon onClick={() => token ? null : navigate('/login')} icon="user" size={20} color="black" className='cursor-pointer' />
-            
+
           {/* Dropdown Menu */}
-          { token && <div className='group-hover:block hidden absolute right-0 pt-4'>
+          {token && <div className='group-hover:block hidden absolute right-0 pt-4'>
             <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
               <p className='cursor-pointer hover:text-black'>My Profile</p>
               <p onClick={() => navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
               <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
             </div>
 
-          </div> }
-          
+          </div>}
+
         </div>
 
         <Link to='/cart' className='relative'>
           <Icon icon="shopping-cart" size={20} color="black" className='cursor-pointer' />
           <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white rounded-full text-[8px]'>{getCartCount()}</p>
         </Link>
+
+        <Link to={adminUrl}><button className='px-4 py-[4px] rounded-xl bg-black text-white'>Admin</button></Link>
 
         <Icon onClick={() => setVisible(true)} icon="menu" size={20} color="black" className='cursor-pointer sm:hidden' />
       </div>
