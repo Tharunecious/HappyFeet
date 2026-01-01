@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "tailwindcss";
+
+
+*{
+    font-family: Outfit;
+}
+
+select, input, textarea{
+    border:1px solid #181717;
+    outline-color:#8d8a8b;
+    border-radius:4px;
+    background-color: rgb(250, 250, 250);
+}
+.active{
+    background-color: #cacaca;
+    border-color: #000000;
+    border-width: 1px;
+}
